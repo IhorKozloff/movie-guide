@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/movie-guide/static/css/main.7acaea2f.css",
-    "main.js": "/movie-guide/static/js/main.bc46ddd9.js",
+    "main.css": "/movie-guide/static/css/main.ac625678.css",
+    "main.js": "/movie-guide/static/js/main.388cf6f4.js",
+    "static/media/header-background-desktop-x1.jpg": "/movie-guide/static/media/header-background-desktop-x1.cc9d76381dba8f7edace.jpg",
+    "static/media/header-background-tablet-x1.jpg": "/movie-guide/static/media/header-background-tablet-x1.05402a4377c24acee85e.jpg",
+    "static/media/mobile-header-background-1x.jpg": "/movie-guide/static/media/mobile-header-background-1x.11b882366ae009ed3424.jpg",
     "index.html": "/movie-guide/index.html",
-    "main.7acaea2f.css.map": "/movie-guide/static/css/main.7acaea2f.css.map",
-    "main.bc46ddd9.js.map": "/movie-guide/static/js/main.bc46ddd9.js.map"
+    "main.ac625678.css.map": "/movie-guide/static/css/main.ac625678.css.map",
+    "main.388cf6f4.js.map": "/movie-guide/static/js/main.388cf6f4.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.bc46ddd9.js"
+    "static/css/main.ac625678.css",
+    "static/js/main.388cf6f4.js"
   ]
 }
