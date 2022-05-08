@@ -1,10 +1,15 @@
-import {Header} from 'components/Header/Header';
+import { Routes, Route } from "react-router-dom";
 
+import  Layout  from "Pages/Layout";
+import  Home  from "Pages/Home";
 
 export const App = () => {
   return (
-    <>
-    <Header></Header>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout/>}>
+        <Route index element={<Home/>}/>
+      </Route>
+      
+    </Routes>
   );
 };

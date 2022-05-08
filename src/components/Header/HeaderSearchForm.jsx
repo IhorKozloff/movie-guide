@@ -5,9 +5,19 @@ import { SearchForm, SearchFormTextArea, SearchFormBtn} from 'components/Header/
 
 
 export const HeaderSearchForm = () => {
+
+
+
     return (
         <>
-            <Formik initialValues={{movie:''}}>
+            <Formik initialValues={{movie:''}} onSubmit={({movie}, actions) => {
+                if (movie.trim() === '') {
+                    return;
+                };
+                console.log(movie)
+                actions.resetForm();
+
+            }}>
                 <SearchForm className="header-form">
                     <SearchFormTextArea type="text" name="movie" placeholder="Поиск фильмов" className="search-input"/>
                     <SearchFormBtn type="submit" className="search-form-btn">

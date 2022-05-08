@@ -70,24 +70,6 @@ export const NavigationLink = styled(NavLink)`
         }
     }
 `;
-// nav {
-
-// }
-// .logo-wrapper {
-   
-// }
-// .logo-name {
-    
-
-// }
-// .navigation-buttons__item:not(:last-child) {
-//     
-// }
-// .navigation-btn {
-
-// }
-
-
 
 
 // }
