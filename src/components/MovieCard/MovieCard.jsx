@@ -1,19 +1,20 @@
 import React from "react";
-import { MovieCardWrapper } from "components/MovieCard/MovieCard.styled";
+import { MovieCardLink, MovieTitle, MovieSpesification, MovieReleaseDelimeter, MovieRelease, MovieRating } from "components/MovieCard/MovieCard.styled";
 
-export const MovieCard = ({poster, title, vote_average, id, genre, releaseDate}) => {
+export const MovieCard = ({poster, title, genre, releaseDate, vote_average, id, state}) => {
+    
     return (
-        <MovieCardWrapper className="card">
-            <img src={poster} width="280" height="398" data-id={id} alt="movie-poster"/>
+        <MovieCardLink to={`/movie/${id}`}  state={state} className="card">
+            <img src={poster} width="280" height="398" alt="movie-poster"/>
             <div className="card__description">
-            <h4 className="movie-name">{title}</h4>
-            <div className="movie-spesification">
-            <span className="movie-genre">{genre}</span>
-            <span className="movie-release-delimeter"></span>
-            <span className="movie-release">{releaseDate}</span>
-            <span className="movie-rating">{vote_average}</span>
+                <MovieTitle className="movie-name">{title}</MovieTitle>
+                <MovieSpesification className="movie-spesification">
+                    <span className="movie-genre">{genre}</span>
+                    <MovieReleaseDelimeter className="movie-release-delimeter"/>
+                    <MovieRelease className="movie-release">{releaseDate}</MovieRelease>
+                    <MovieRating className="movie-rating">{vote_average}</MovieRating>
+                </MovieSpesification>
             </div>
-            </div>
-        </MovieCardWrapper>
+        </MovieCardLink>
     );
 };

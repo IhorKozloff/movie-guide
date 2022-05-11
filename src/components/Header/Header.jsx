@@ -1,17 +1,13 @@
-import React from "react";
-import { 
-    HeaderContainer, 
-    NavigationWrapper, 
-    LogoWrapper, 
-    NavigationLinksList, 
-    NavigationLinksItem, 
-    NavigationLink,
-    LogoName,
-} from 'components/Header/Header.styled'
-import { HeaderSearchForm } from 'components/Header/HeaderSearchForm';
+import React from 'react';
+import { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName } from 'components/Header/Header.styled'
+import { Navigation } from 'components/Header/Navigation/Navigation'
+import { SearchBar } from 'components/Header/SearchBar/SearchBar';
 import { IconSVG } from 'Utils/Icons';
 
 export const Header = () => {
+
+
+
     return (
         <>
             <header className="header-section">
@@ -23,18 +19,12 @@ export const Header = () => {
                             <LogoName className="logo-name">Movie Guide Hub</LogoName>
                         </LogoWrapper>
 
-                        <NavigationLinksList>
-                            <NavigationLinksItem>
-                                <NavigationLink to="/">home</NavigationLink>
-                            </NavigationLinksItem>
-
-                            <NavigationLinksItem>
-                                <NavigationLink to="/library">my library</NavigationLink>
-                            </NavigationLinksItem>
-                        </NavigationLinksList>
+                        <Navigation/>
 
                     </NavigationWrapper>
-                    <HeaderSearchForm/>
+
+                    <SearchBar/>
+                    
                 </HeaderContainer>
             </header>
         </>

@@ -1,12 +1,12 @@
 import React from "react";
 import { Formik } from "formik";
 import { IconSVG } from 'Utils/Icons';
-import { SearchForm, SearchFormTextArea, SearchFormBtn} from 'components/Header/HeaderSearchForm.styled';
+import { SearchForm, SearchFormTextArea, SearchFormBtn} from 'components/Header/SearchForm/HeaderSearchForm.styled';
 
 
-export const HeaderSearchForm = () => {
 
 
+export const HeaderSearchForm = ({setQueryMovie}) => {
 
     return (
         <>
@@ -14,7 +14,9 @@ export const HeaderSearchForm = () => {
                 if (movie.trim() === '') {
                     return;
                 };
+
                 console.log(movie)
+                setQueryMovie(movie)
                 actions.resetForm();
 
             }}>
