@@ -15,7 +15,7 @@ export const HeaderSearchForm = ({setQueryMovie}) => {
                     return;
                 };
 
-                console.log(movie)
+
                 setQueryMovie(movie)
                 actions.resetForm();
 

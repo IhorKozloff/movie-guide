@@ -1,9 +1,9 @@
 import { MovieReviewWrapper, ImageWrapper, InformBlock, MovieInformList, MovieInformItem, ItemName, ItemValue, MovieDescription, DescriptionText} from "components/MovieReview/MovieReview.styled";
-
+import { posterGuard } from 'Utils/PosterGuard';
 export const MovieReview = ({data}) => {
-  console.log(data)
+
   const {poster_path, original_title, vote_average, genres, vote_count, popularity, overview} = data;
-    
+ 
   function MovieReviewGenresConverter (data) {
           return data.map(item => {
             return item.name
@@ -17,7 +17,7 @@ export const MovieReview = ({data}) => {
         
         <MovieReviewWrapper>
           <ImageWrapper className="image-wrapper">
-            <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt="movie-poster" width="400px" height="477px"></img>
+            <img src={posterGuard(poster_path, 'large')} alt="movie-poster" width="400px" height="477px"></img>
           </ImageWrapper>
 
           <InformBlock className="inform-block">

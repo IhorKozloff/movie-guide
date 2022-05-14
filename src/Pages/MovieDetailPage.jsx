@@ -25,7 +25,6 @@ export default function MovieDetailPage () {
     const navigate = useNavigate();
     const [backLink, setBackLink] = useState('');
 
-    console.log(location)
 
     useEffect(() => {
         if(backLink !== '') {
@@ -36,8 +35,8 @@ export default function MovieDetailPage () {
 
 
     function onClose () {
+        console.log('сработала функция онКлоуз')
         navigate(backLink);
-        console.log('Окно закрылось')
     };
     return (
         <ModalWindow onClose={onClose} >
