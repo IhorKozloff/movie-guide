@@ -6,7 +6,7 @@ import { MovieListComponent } from "components/MovieList/MovieListComponent";
 
 
 export default function Search () {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const [movieList, setmovieList] = useState(null);
     const movieTitle = searchParams.get('result') ?? '';
     const location = useLocation();
