@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/movie-guide/static/css/main.ac625678.css",
-    "main.js": "/movie-guide/static/js/main.41699e09.js",
+    "main.css": "/movie-guide/static/css/main.f6c002bb.css",
+    "main.js": "/movie-guide/static/js/main.f78c024d.js",
     "static/media/header-background-desktop-x1.jpg": "/movie-guide/static/media/header-background-desktop-x1.cc9d76381dba8f7edace.jpg",
     "static/media/header-background-tablet-x1.jpg": "/movie-guide/static/media/header-background-tablet-x1.05402a4377c24acee85e.jpg",
     "static/media/mobile-header-background-1x.jpg": "/movie-guide/static/media/mobile-header-background-1x.11b882366ae009ed3424.jpg",
+    "static/media/onNoPoster.jpg": "/movie-guide/static/media/onNoPoster.71d9264b65b1cb196457.jpg",
+    "static/media/onNoPosterLarge.jpg": "/movie-guide/static/media/onNoPosterLarge.db2a0121216d1ba27859.jpg",
     "index.html": "/movie-guide/index.html",
-    "main.ac625678.css.map": "/movie-guide/static/css/main.ac625678.css.map",
-    "main.41699e09.js.map": "/movie-guide/static/js/main.41699e09.js.map"
+    "main.f6c002bb.css.map": "/movie-guide/static/css/main.f6c002bb.css.map",
+    "main.f78c024d.js.map": "/movie-guide/static/js/main.f78c024d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac625678.css",
-    "static/js/main.41699e09.js"
+    "static/css/main.f6c002bb.css",
+    "static/js/main.f78c024d.js"
   ]
 }
