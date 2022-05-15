@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const MovieList = styled.ul`
     padding-bottom: 40px;
@@ -9,7 +9,7 @@ export const MovieList = styled.ul`
 export const MovieListItem = styled.li`
     margin-right: 30px;
 `;
-export const MovieCardLink = styled(Link)`
+export const MovieCardLink = styled(NavLink)`
     text-decoration: none;
     color: #000;
     display: block;

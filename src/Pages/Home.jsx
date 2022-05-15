@@ -10,19 +10,16 @@ import { MovieListComponent } from "components/MovieList/MovieListComponent";
 
 export default function Home () {
 
-    const [topMovieList, setTopMovieList] = useState(null);
+    const [topMovieList, setTopMovieList] = useState();
     const location = useLocation(); 
 
 
 
     useEffect(() => {
-        if (topMovieList) {
-            return
-        }
         apiService.getTopMoviesOnWeek().then(response => {
             setTopMovieList(response.results);
         })
-    },[topMovieList]);
+    },[]);
 
     return (
         <>
