@@ -1,23 +1,12 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+
 // .gallery1{
 //     padding-bottom: 40px;
 //     display: flex;
 //     flex-flow: row wrap;
 // }
 
-export const MovieCardLink = styled(Link)`
-    text-decoration: none;
-    color: #000;
-    display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    max-width: 280px;
-    width: 100%;
-    &:hover {
-        cursor: pointer;
-    }
-`;
+
 
 export const MovieTitle = styled.h4`
     text-transform: uppercase;
