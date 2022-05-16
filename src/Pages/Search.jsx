@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { useSearchParams, useLocation} from "react-router-dom";
+import { useSearchParams, useLocation, Outlet} from "react-router-dom";
 import * as apiService from "API/API";
 import { MovieListComponent } from "components/MovieList/MovieListComponent";
 
@@ -23,6 +23,7 @@ export default function Search () {
     return (
         <>
             {movieList && <MovieListComponent data={movieList} state={{from: location}}/>}
+            <Outlet/>
         </>
         
     );   

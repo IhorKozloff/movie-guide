@@ -4,7 +4,10 @@ import { MovieList, MovieListItem, MovieCardLink } from 'components/MovieList/Mo
 import { releaseDateConverter } from "Utils/ReleaseDateConverter";
 import { genreСonverter } from "Utils/GenreСonverter";
 import { posterGuard } from 'Utils/PosterGuard';
+
+
 export const MovieListComponent = ({data, state}) => {
+
 
     return (
         <MovieList>
@@ -12,7 +15,7 @@ export const MovieListComponent = ({data, state}) => {
                 return (
 
                 <MovieListItem  key={id}>
-                    <MovieCardLink to={`/movie/${id}`}  state={state}>
+                    <MovieCardLink to={`/movies/${id}`} state={state}>
                         <MovieCard 
                             poster={posterGuard(poster_path, 'small')} 
                             title={title} 

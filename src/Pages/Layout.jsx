@@ -6,7 +6,7 @@ import { FooterSection } from "components/Footer/Footer";
 export default function Layout () {
     return (
         <>
-            <Header/>
+            <Header pageStatus={'home'}/>
 
             <Section  className="main">
                 <Container>

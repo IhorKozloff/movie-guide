@@ -23,20 +23,20 @@ export default function MovieDetailPage () {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const [backLink, setBackLink] = useState('');
+    // const [backLink, setBackLink] = useState('');
 
 
-    useEffect(() => {
-        if(backLink !== '') {
-             return
-        };
-        setBackLink(location?.state?.from ?? '/')
-     },[backLink, location?.state?.from])
+    // useEffect(() => {
+    //     if(backLink !== '') {
+    //          return
+    //     };
+    //     setBackLink(location?.state?.from ?? '/')
+    //  },[backLink, location?.state?.from])
 
 
     function onClose () {
         console.log('сработала функция онКлоуз')
-        navigate(backLink);
+        navigate(location?.state?.from ?? '/');
     };
     return (
         <ModalWindow onClose={onClose} >

@@ -6,11 +6,14 @@ import { HeaderSearchForm } from 'components/Header/SearchForm/HeaderSearchForm'
 export const SearchBar = () => {
 
 const [queryMovie, setQueryMovie] = useState('');
+
 const navigate = useNavigate();
+
     useEffect(() => {
         if (queryMovie !== '') {
             navigate(`/search?result=${queryMovie}`)
         }
+        return setQueryMovie('')
     },[navigate, queryMovie])
 
 
