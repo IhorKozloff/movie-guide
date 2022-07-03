@@ -1,10 +1,7 @@
 import React from "react";
-import { MovieCard } from 'components/MovieCard/MovieCard';
+import { MovieCard } from 'components';
 import { MovieList, MovieListItem, MovieCardLink } from 'components/MovieList/MovieListComponent.styled'
-import { releaseDateConverter } from "Utils/ReleaseDateConverter";
-import { genreСonverter } from "Utils/GenreСonverter";
-import { posterGuard } from 'Utils/PosterGuard';
-
+import { releaseDateConverter, genreСonverter, posterGuard } from "Utils";
 
 export const MovieListComponent = ({data, state}) => {
 
@@ -20,7 +17,7 @@ export const MovieListComponent = ({data, state}) => {
                             poster={posterGuard(poster_path, 'small')} 
                             title={title} 
                             genre={genreСonverter(genre_ids)} 
-                            releaseDate={releaseDateConverter(release_date)} 
+                            releaseDate={release_date ? releaseDateConverter(release_date) : 'release date unknown'} 
                             vote_average={vote_average} 
                             id={id}
                         />

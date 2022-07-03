@@ -1,12 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 
+
 import  Layout  from "Pages/Layout";
 import  Home  from "Pages/Home";
 import  Search  from "Pages/Search";
 import MovieDetailPage from "Pages/MovieDetailPage";
 import LibraryPage from "Pages/LibraryPage";
+import WatchPage from "Pages/WatchPage";
+import QueuePage from "Pages/QueuePage";
+
 
 export const App = () => {
+
+
+
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>
@@ -19,7 +26,10 @@ export const App = () => {
 
       </Route>
       
-      <Route path="library" element={<LibraryPage/>}/>
+      <Route path="library" element={<LibraryPage/>}>
+        <Route path="watch" element={<WatchPage/>}/>
+        <Route path="queue" element={<QueuePage/>}/>
+      </Route>
     </Routes>
   );
 };

@@ -1,15 +1,17 @@
-import { MovieReviewWrapper, ImageWrapper, InformBlock, MovieInformList, MovieInformItem, ItemName, ItemValue, MovieDescription, DescriptionText} from "components/MovieReview/MovieReview.styled";
+import { 
+  MovieReviewWrapper, ImageWrapper, InformBlock, 
+  MovieInformItem, ItemName, ItemValue, 
+  MovieDescription, DescriptionText, MovieInformList
+} from "components/MovieReview/MovieReview.styled";
+
+
 import { posterGuard } from 'Utils/PosterGuard';
+import { movieReviewGenresConverter } from 'Utils/MovieRewievGenresConverter';
+
 export const MovieReview = ({data}) => {
 
   const {poster_path, original_title, vote_average, genres, vote_count, popularity, overview} = data;
  
-  function MovieReviewGenresConverter (data) {
-          return data.map(item => {
-            return item.name
-          }).join(", ");
-      };  
-
 
 
 
@@ -41,7 +43,7 @@ export const MovieReview = ({data}) => {
 
               <MovieInformItem className="movie-inform-item">
                 <ItemName className="item-name">Genre</ItemName>
-                <ItemValue className="item-value">{MovieReviewGenresConverter(genres)}</ItemValue>
+                <ItemValue className="item-value">{movieReviewGenresConverter(genres)}</ItemValue>
               </MovieInformItem>
 
             </MovieInformList>
@@ -50,18 +52,17 @@ export const MovieReview = ({data}) => {
               <p>About </p>
               <DescriptionText className="description-text">{overview}</DescriptionText>
             </MovieDescription>
-           
 
           </InformBlock>
+          
         </MovieReviewWrapper>
         
     );
 };
 
-//<div className="infrom-btns-wrapper">
-//<button type="button" className="inform-btn" data-inform-btn="watched">${watchedTextContentGenerate(id)}</button>
-//<button type="button" className="inform-btn" data-inform-btn="queue">${queueTextContentGenerate(id)}</button>
-//</div>
+
+// ${watchedTextContentGenerate(id)}
+// ${queueTextContentGenerate(id)}
 
 
 

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import { NavLink } from 'react-router-dom';
 // for home
 import headerHomeBackgroundDesctop from 'images/header-background-desktop-x1.jpg';
 import headerHomeBackgroundTablet from 'images/header-background-tablet-x1.jpg';
@@ -17,9 +17,7 @@ export const HeaderContainer = styled.section`
     position: relative;
     padding: 46px 20px 97px 20px;
     background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundMobile : headerHomeBackgroundMobile}");
-    // props => ({
-    //     fontSize: props.fontSize
-    //   })
+ 
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -33,7 +31,7 @@ export const HeaderContainer = styled.section`
 `;
 export const NavigationWrapper = styled.nav`
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     margin-bottom: 41px;
     justify-content:space-between;
 `;
@@ -51,8 +49,37 @@ export const LogoName = styled.span`
     text-align: center;
     margin-left: 10px;
 `;
+export const ButtonLink = styled(NavLink)`
+    display: flex;
+    width: 140px;
+    height: 45px;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #FFF;
+
+        &:hover {
+            background-color: #810114;
+            color: #FFF;
+            box-shadow: 5px 5px 15px 1px #FFF;
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1);
+            opacity: 0.7;
+            box-shadow: none;
+        }
+        &.active {
+            background-color: #810114;
+            color: #FFF
+        }
+`;
 export const LibraryButtonsWrapper = styled.div`
-    max-width: 295px;
+    max-width: 310px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper } from 'components/Header/Header.styled'
-import { Navigation } from 'components/Header/Navigation/Navigation'
-import { SearchBar } from 'components/Header/SearchBar/SearchBar';
+import * as headerStyles from 'components/Header/Header.styled'
+import { Navigation, SearchBar, Authentication, ThemeSwitcher } from 'components/Header';
 import { IconSVG } from 'Utils/Icons';
-import { ButtonLarge } from 'components/ButtonLarge/ButtonLarge';
+
 
 export const Header = ({pageStatus}) => {
-    const navigate = useNavigate();
+    const { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink } = headerStyles;
     const [onPage, setOnPage] = useState();
 
     useEffect(() => {
         setOnPage(pageStatus)
-    },[pageStatus])
-
-
-
+    },[pageStatus]);
 
     return (
         <>
@@ -29,23 +24,20 @@ export const Header = ({pageStatus}) => {
                         </LogoWrapper>
 
                         <Navigation/>
-
+                        <Authentication/>
+                        
                     </NavigationWrapper>
 
                     {onPage === 'home' && <SearchBar/>}
 
                     {onPage === 'library' && <LibraryButtonsWrapper>
 
-                        <ButtonLarge customClass={'library-btn'} onButtonClick={() => {
-                            navigate('/library/watch')
-                        }}>watch</ButtonLarge>
-
-                        <ButtonLarge customClass={'library-btn'} onButtonClick={() => {
-                            navigate('/library/queue')
-                        }}>queue</ButtonLarge>
+                        <ButtonLink to={'/library/watch'}>watch</ButtonLink>
+                        <ButtonLink to={'/library/queue'}>queue</ButtonLink>
+                        
 
                     </LibraryButtonsWrapper>}
-                    
+                    <ThemeSwitcher/>
                 </HeaderContainer>
             </header>
         </>

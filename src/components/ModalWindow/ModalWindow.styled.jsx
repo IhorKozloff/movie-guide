@@ -11,9 +11,8 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid black;
-    padding: 50px 30px 40px 30px;
     position: absolute;
     background-color: #FFF;
     top: 50%;

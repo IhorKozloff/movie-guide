@@ -12,6 +12,7 @@ export const ModalWindow = ({children, onClose}) => {
             <ModalCloseBtn type="button" className="modal-btn-close" onClick={() => {onClose()}}>X</ModalCloseBtn>
                 {children}
             </ModalContent>
+            
         </ModalOverlay>, modalWindowRoot
     );
 };
