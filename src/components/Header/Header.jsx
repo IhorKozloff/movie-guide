@@ -24,10 +24,11 @@ export const Header = ({pageStatus}) => {
                         </LogoWrapper>
 
                         <Navigation/>
+                        <ThemeSwitcher/>
                         <Authentication/>
                         
                     </NavigationWrapper>
-
+                    
                     {onPage === 'home' && <SearchBar/>}
 
                     {onPage === 'library' && <LibraryButtonsWrapper>
@@ -37,7 +38,7 @@ export const Header = ({pageStatus}) => {
                         
 
                     </LibraryButtonsWrapper>}
-                    <ThemeSwitcher/>
+                    
                 </HeaderContainer>
             </header>
         </>

@@ -5,10 +5,16 @@ import { App } from 'components/App';
 import './index.css';
 
 
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter basename="/movie-guide/">
+    
       <App />
+    
     </BrowserRouter>
+    
   </React.StrictMode>
 );

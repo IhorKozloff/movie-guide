@@ -1,29 +1,43 @@
-import { ThemeInput } from './ThemeSwitcher.styled';
+import { ThemeInput, ThemeBtn, ThemeSwitcherWrapper } from './ThemeSwitcher.styled';
+// import { useState } from 'react';
+import { IconSVG } from 'Utils/Icons';
+import { useThemeContext } from 'Hooks/ThemeContext';
+
+
 
 export const ThemeSwitcher = () => {
+    const {status, setThemeStatus} = useThemeContext();
 
+    function setTheme (event) {
+        const currentBtn = event.currentTarget.name;
 
+        console.log(currentBtn)
 
+        switch(currentBtn) {
+            case "setLightTheme":
+                setThemeStatus("dark")
+                break;
+            case "setDarkTheme":
+                setThemeStatus("light")
+                break;
+                default:
+                    console.log('incorrect button')
+        }
+    }
 
-function onThemeSwitcherChange () {
-
-}
 
 
     return(
-        <label>
-        Interest rate:
-        <ThemeInput
-            type="range"
-            name="interest_rate"
-            value="40"
-            min="0"
-            max="100"
-            step="20"
-            onChange={onThemeSwitcherChange}
-        />
-        </label>
-
+        <ThemeSwitcherWrapper>
+            {status === "light" && <ThemeBtn type='submit' name='setLightTheme' onClick={setTheme}>
+                <IconSVG id={'icon-light-theme'}/>
+            </ThemeBtn>}
+            
+            {status === "dark" && <ThemeBtn type='submit' name='setDarkTheme' onClick={setTheme}>
+                <IconSVG id={'icon-dark-theme'}/>
+            </ThemeBtn>}
+        </ThemeSwitcherWrapper>
+        
 
     )
 }
