@@ -4,10 +4,6 @@ export const ThemeSwitcherWrapper = styled.div`
     display: flex;
 `;
 
-export const ThemeInput = styled.input`
-    color: #fff;
-    width: 30px;
-`;
 export const ThemeBtn = styled.button`
     display: flex;
     justify-content: center;

@@ -1,4 +1,4 @@
-import { ThemeInput, ThemeBtn, ThemeSwitcherWrapper } from './ThemeSwitcher.styled';
+import { ThemeBtn, ThemeSwitcherWrapper } from './ThemeSwitcher.styled';
 // import { useState } from 'react';
 import { IconSVG } from 'Utils/Icons';
 import { useThemeContext } from 'Hooks/ThemeContext';
