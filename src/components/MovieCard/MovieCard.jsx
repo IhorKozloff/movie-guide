@@ -1,23 +1,25 @@
 import React from "react";
-import { MovieTitle, MovieSpesification, MovieReleaseDelimeter, MovieRelease, MovieRating } from "components/MovieCard/MovieCard.styled";
+import { MovieTitle, MovieSpesification, MovieReleaseDelimeter, MovieRelease, MovieRating, CardDescription, MovieGenres } from "components/MovieCard/MovieCard.styled"; 
+import { useThemeContext } from 'Hooks/ThemeContext';
 
-
-
+   
 export const MovieCard = ({poster, title, genre, releaseDate, vote_average, id, state}) => {
+
+    const {status} = useThemeContext();
 
     return (
         <>
             <img src={poster} width="280" height="398" alt="movie-poster"/> 
             
-            <div className="card__description">
+            <CardDescription className="card__description" themeStyle={status}>
                 <MovieTitle className="movie-name">{title}</MovieTitle>
                 <MovieSpesification className="movie-spesification">
-                    <span className="movie-genre">{genre}</span>
-                    <MovieReleaseDelimeter className="movie-release-delimeter"/>
-                    <MovieRelease className="movie-release">{releaseDate}</MovieRelease>
-                    <MovieRating className="movie-rating">{vote_average}</MovieRating>
+                    <MovieGenres className="movie-genre" themeStyle={status}>{genre}</MovieGenres>
+                    <MovieReleaseDelimeter className="movie-release-delimeter" themeStyle={status}/>
+                    <MovieRelease className="movie-release" themeStyle={status}>{releaseDate}</MovieRelease>
+                    <MovieRating className="movie-rating" themeStyle={status}>{vote_average}</MovieRating>
                 </MovieSpesification>
-            </div>
+            </CardDescription>
         </>
     );
 };

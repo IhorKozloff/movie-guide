@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import * as headerStyles from 'components/Header/Header.styled'
-import { Navigation, SearchBar, Authentication, ThemeSwitcher } from 'components/Header';
+import { Navigation, SearchBar, Authentication, ThemeSwitcher} from 'components/Header';
 import { IconSVG } from 'Utils/Icons';
 
 
 export const Header = ({pageStatus}) => {
-    const { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink } = headerStyles;
+    const { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink, AuthWrapper } = headerStyles;
     const [onPage, setOnPage] = useState();
 
     useEffect(() => {
@@ -24,8 +24,11 @@ export const Header = ({pageStatus}) => {
                         </LogoWrapper>
 
                         <Navigation/>
-                        <ThemeSwitcher/>
-                        <Authentication/>
+                        <AuthWrapper>
+                            <Authentication/>
+                            <ThemeSwitcher/>
+                        </AuthWrapper>
+                       
                         
                     </NavigationWrapper>
                     

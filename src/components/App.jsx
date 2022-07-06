@@ -9,12 +9,26 @@ import MovieDetailPage from "Pages/MovieDetailPage";
 import LibraryPage from "Pages/LibraryPage";
 import WatchPage from "Pages/WatchPage";
 import QueuePage from "Pages/QueuePage";
+import { useEffect } from "react";
 
 
 export const App = () => {
+  const [themeStatus, setThemeStatus] = useState();
 
+  function themeStorageActions () {
+    const themeStorageData = localStorage.getItem("theme")
+    if (themeStorageData === null) {
+      localStorage.setItem("theme", "light")
+      setThemeStatus("light");
+    } else {
+      setThemeStatus(themeStorageData);
+    }
+  }
 
-  const [themeStatus, setThemeStatus] = useState("light");
+  useEffect(() => {
+    themeStorageActions()
+  },[]);
+
   return (
     <ThemeContext.Provider value={{status: themeStatus, setThemeStatus: setThemeStatus}}>
       <Routes>

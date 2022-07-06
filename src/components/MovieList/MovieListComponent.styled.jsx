@@ -7,14 +7,16 @@ export const MovieList = styled.ul`
     flex-flow: row wrap;
 `;
 export const MovieListItem = styled.li`
+    &:nth-child(n + 4) {
+        margin-top: 10px;
+    }
     margin-right: 30px;
+    border:${props => props.themeStyle === "light" ? "none" : "1px solid #95949A"}
 `;
 export const MovieCardLink = styled(Link)`
     text-decoration: none;
     color: #000;
     display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
     max-width: 280px;
     width: 100%;
     &:hover {

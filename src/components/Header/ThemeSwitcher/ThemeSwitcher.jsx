@@ -16,9 +16,11 @@ export const ThemeSwitcher = () => {
         switch(currentBtn) {
             case "setLightTheme":
                 setThemeStatus("dark")
+                localStorage.setItem("theme", "dark")
                 break;
             case "setDarkTheme":
                 setThemeStatus("light")
+                localStorage.setItem("theme", "light")
                 break;
                 default:
                     console.log('incorrect button')

@@ -84,3 +84,8 @@ export const LibraryButtonsWrapper = styled.div`
     display: flex;
     justify-content: space-between;
 `;
+export const AuthWrapper = styled.div`
+    display: flex;
+    justify-content:start;
+    align-items: center;
+`;

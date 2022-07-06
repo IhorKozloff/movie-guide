@@ -4,7 +4,7 @@ import { useThemeContext } from 'Hooks/ThemeContext';
 
 export default function LibraryPage () {
 
-    const {status, setThemeStatus} = useThemeContext();
+    const {status} = useThemeContext();
 
     return (
 

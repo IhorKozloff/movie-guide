@@ -4,3 +4,4 @@ export * from "./Icons";
 export * from "./PosterGuard";
 export * from "./ReleaseDateConverter";
 export * from "./GenresFormating";
+export * from "./voteConverter";
