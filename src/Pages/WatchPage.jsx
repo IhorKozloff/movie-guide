@@ -23,7 +23,7 @@ export default function WatchPage () {
 
     return (
         <>
-            <div>WatchPage</div>
+
             {movieList && <MovieListComponent data={movieList} state={{from: location}}/>}
     
         </>

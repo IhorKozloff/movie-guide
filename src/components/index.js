@@ -8,3 +8,5 @@ export * from "./MovieCard/MovieCard";
 export * from "./MovieList/MovieListComponent";
 export * from "./MovieReview/MovieReview";
 export * from "./Forms";
+export * from "./GoBackBtn/GoBackBtn";
+export * from "./MovieTrailer/MovieTrailer";

@@ -7,7 +7,7 @@ export const SearchForm = styled(Form)`
     display: flex;
 `;
 export const SearchFormTextArea = styled(Field)`
-    width: 100%;
+    width: 22%;
     color: #fff;
     font-size: 14px;
     line-height: 1.14;

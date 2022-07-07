@@ -11,26 +11,26 @@ export const ModalOverlay = styled.div`
 `;
 
 export const ModalContent = styled.div`
-    border-radius: 10px;
-    border: 1px solid black;
+box-sizing: contant-box;
     position: absolute;
     background-color: #FFF;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    background: none;
+    border: none;
 `;
 export const ModalCloseBtn = styled.button`
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-image: url('/images/close-btn-background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size:contain;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
     border: none;
     background-color: #FFF;
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 10px;
     cursor: pointer;
     &:hover {

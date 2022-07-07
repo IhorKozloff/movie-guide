@@ -15,14 +15,14 @@ import headerLibraryBackgroundMobile from 'images/headerInLibrary/header-inLibra
 
 export const HeaderContainer = styled.section`
     position: relative;
-    padding: 46px 20px 97px 20px;
+    padding: 46px 20px 20px 20px;
     background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundMobile : headerHomeBackgroundMobile}");
  
     background-repeat: no-repeat;
     background-size: cover;
     
     @media (min-width: 321px) {
-        padding: 46px 76px 97px 71px;
+        padding: 46px 76px 20px 71px;
         background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundTablet : headerHomeBackgroundTablet}");
     }
     @media (min-width: 769px) {

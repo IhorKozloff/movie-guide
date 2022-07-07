@@ -24,10 +24,21 @@ export async function getMoviesByQueryName (name) {
 export async function searchAPIbyID (movieID) {
     try {
         const response = await axios.get(`/movie/${movieID}?api_key=${API_KEY}&language=en-US`);
+        console.log(response.data)
         return response.data;
     } catch (error) {
         console.error('Упс, ошибочка вышла');
     }
 
+}
+export async function searchAPIVideos (movieID) {
+    try {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${API_KEY}&language=en-US`);
+        
+        return response.data.results;
+    } catch (error) {
+        console.log('Упс, ошибочка вышла');
+        console.error(error);
+    }
 }
 

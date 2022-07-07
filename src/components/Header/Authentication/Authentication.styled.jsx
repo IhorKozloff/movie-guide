@@ -11,6 +11,6 @@ export const AuthBtn = styled.button`
     cursor: pointer;
     border: none;
     background: none;
-    margin-right: 10px;
+    margin-right: 40px;
 
 `;

@@ -24,7 +24,6 @@ export default function QueuePage () {
 
     return (
         <>
-            <div>QueuePage</div>
             {movieList !== null && movieList !== undefined && <MovieListComponent data={movieList} state={{from: location}}/>}
     
         </>

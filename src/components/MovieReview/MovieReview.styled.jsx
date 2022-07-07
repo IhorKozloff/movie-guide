@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 export const MovieReviewWrapper = styled.div`
     width: 880px;
     display: flex;
+    color: ${props => props.themeDecor === "light" ? "#000" : "#FFF"};
 `;
 export const ImageWrapper = styled.div`
     position: relative;
@@ -16,6 +17,9 @@ export const InformBlock = styled.div`
 export const MovieInformList = styled.ul`
     margin-top: 20px;
     flex-direction: column;
+    & .item-value {
+        color: ${props => props.themeDecor === "light" ? "#000" : "#FFF"};
+    }
 `;
 export const MovieInformItem = styled.li`
     display: flex;

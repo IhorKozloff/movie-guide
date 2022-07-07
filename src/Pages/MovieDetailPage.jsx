@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate} from 'react-router-dom';
 import * as apiService from "API/API";
-import { ModalWindow, MovieReview, ControlBar } from 'components';
+import { MovieReview, ControlBar, GoBackBtn, MovieTrailer } from 'components';
+import { useThemeContext } from 'Hooks/ThemeContext';
 
 export default function MovieDetailPage () {
+
+    const {status} = useThemeContext();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -40,19 +43,26 @@ export default function MovieDetailPage () {
         }
     };
 
-    function onClose () {
+    function onBackBtn () {
         navigate(location?.state?.from ?? '/');
     };
 
     return (
-        <ModalWindow onClose={onClose} >
-            {reviewData && <MovieReview data={reviewData}/>}
+        <div className='movie-details-page-wrapper' style={{position: "relative"}}>
+            <GoBackBtn onBackBtn={onBackBtn} themeDecor={status}/>
+
+            {reviewData && <MovieReview data={reviewData} themeDecor={status}/>}
             {reviewData && 
                 <ControlBar 
                     currentMovieId={reviewData.id} 
                     handleLocalStorage={handleLocalStorage} 
                 />
             }
-        </ModalWindow>
+            <MovieTrailer movieId={movieId}>
+
+            </MovieTrailer>
+        </div>
+            
+
     )
 };

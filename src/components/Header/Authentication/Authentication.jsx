@@ -35,6 +35,9 @@ function closeAuthForm () {
     SetRegisterActiveStatus(false);
 }
 
+
+
+
     return(
         <>
             <ul>
