@@ -10,3 +10,4 @@ export * from "./MovieReview/MovieReview";
 export * from "./Forms";
 export * from "./GoBackBtn/GoBackBtn";
 export * from "./MovieTrailer/MovieTrailer";
+export * from "./MoreButton/MoreButton";

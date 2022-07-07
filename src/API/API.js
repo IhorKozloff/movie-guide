@@ -2,9 +2,9 @@ import axios from "axios";
 axios.defaults.baseURL = "https://api.themoviedb.org/3"
 const API_KEY = "8b9c2b35d1bc0d9e8879c4faa9dd8b75";
 
-export async function getTopMoviesOnWeek () {
+export async function getTopMoviesOnWeek (page) {
     try {
-        const response = await axios.get(`/trending/movie/week?api_key=${API_KEY}&page=1`);
+        const response = await axios.get(`/trending/movie/week?api_key=${API_KEY}&page=${page}`);
         return response.data;
     } catch (error) {
         console.error('Упс, ошибочка вышла');

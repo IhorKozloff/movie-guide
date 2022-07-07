@@ -11,7 +11,7 @@ export const Container = styled.div`
     background: ${props => props.backgroundTheme === "light" ? "#fff" : "#1A1634"};
     margin: 0 auto;
     display: flex;
-    flex-direcion: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 1024px;

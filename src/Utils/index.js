@@ -5,3 +5,5 @@ export * from "./PosterGuard";
 export * from "./ReleaseDateConverter";
 export * from "./GenresFormating";
 export * from "./voteConverter";
+export * from "./MovieListDataCreator"
+export * from "./MoreBtnStatusChanger";

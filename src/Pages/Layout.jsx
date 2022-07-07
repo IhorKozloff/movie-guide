@@ -8,7 +8,6 @@ export default function Layout () {
     const {status} = useThemeContext();
  
 
-//{status: themeStatus, action: setThemeStatus}
     return (
         <>
        
