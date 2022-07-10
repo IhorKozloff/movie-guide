@@ -6,11 +6,11 @@ import { InputsWrapper } from "components/Forms/FormComponents/InputsWrapper.sty
 
 
 
-export const RegisterForm = () => {
+export const RegisterForm = ({onSubmitRegisterForm}) => {
 
-    const onFormSubmit = ({username, email, password}, {resetForm}) => {
-        console.log({username, email, password});
-
+    const onFormSubmit = async ({name, email, password}, {resetForm}) => {
+        console.log({name, email, password});
+        onSubmitRegisterForm({name, email, password});
         resetForm();
     };
 
@@ -23,7 +23,7 @@ export const RegisterForm = () => {
             <InputsWrapper>
                 <li>
                     <Input type={'text'}>
-                        Username
+                        Name
                     </Input>
                 </li>
 

@@ -4,12 +4,12 @@ import { StyledLink } from "components"
 import { UserLoginForm } from "components/Forms/LoginForm/LoginForm.styled";
 
 
-export const LoginForm = () => {
+export const LoginForm = ({onSubmitLoginForm}) => {
 
 
 
     const onFormSubmit = ({email, password}, {resetForm}) => {
-
+        onSubmitLoginForm({email, password});
         resetForm();
     };
 

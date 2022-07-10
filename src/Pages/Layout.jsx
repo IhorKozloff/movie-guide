@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import {Section, Container, Header, FooterSection} from "components";
 import { useThemeContext } from 'Hooks/ThemeContext';
-
+import { Suspense } from "react";
 
 export default function Layout () {
 
@@ -15,7 +15,9 @@ export default function Layout () {
             
                 <Section  className="main" backgroundTheme={status}>
                     <Container backgroundTheme={status}>
-                        <Outlet/>
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Outlet/>
+                        </Suspense>
                     </Container>
                 </Section>
             

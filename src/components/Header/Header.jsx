@@ -7,6 +7,8 @@ import { IconSVG } from 'Utils/Icons';
 export const Header = ({pageStatus}) => {
     const { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink, AuthWrapper } = headerStyles;
     const [onPage, setOnPage] = useState();
+    
+
 
     useEffect(() => {
         setOnPage(pageStatus)
@@ -26,6 +28,7 @@ export const Header = ({pageStatus}) => {
                         <Navigation/>
                         <AuthWrapper>
                             <Authentication/>
+                            
                             <ThemeSwitcher/>
                         </AuthWrapper>
                        

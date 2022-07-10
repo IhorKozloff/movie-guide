@@ -1,6 +1,6 @@
 import { MovieTrailerWrapper, MovieTrailerBtn, MovieTrailerPlayer } from './MovieTrailer.styled';
 import { IconSVG } from 'Utils';
-import { searchAPIVideos } from 'API/API'
+import { searchAPIVideos } from 'API/moviesAPI'
 import { ModalWindow } from 'components'
 import { useState } from 'react';
 

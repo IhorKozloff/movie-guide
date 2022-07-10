@@ -11,3 +11,4 @@ export * from "./Forms";
 export * from "./GoBackBtn/GoBackBtn";
 export * from "./MovieTrailer/MovieTrailer";
 export * from "./MoreButton/MoreButton";
+export * from "./PaginationBar/PaginationBar";

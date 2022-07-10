@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from "react";
+import {useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import * as apiService from "API/API";
+import * as apiService from "API/moviesAPI";
 import { MovieListComponent, MoreButton } from "components";
 import { movieListDataCreator, handleMoreBtnStatus } from "Utils";
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate} from 'react-router-dom';
-import * as apiService from "API/API";
+import * as apiService from "API/moviesAPI";
 import { MovieReview, ControlBar, GoBackBtn, MovieTrailer } from 'components';
 import { useThemeContext } from 'Hooks/ThemeContext';
 

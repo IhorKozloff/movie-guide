@@ -9,7 +9,7 @@ export const MovieCard = ({poster, title, genre, releaseDate, vote_average, id, 
 
     return (
         <>
-            <img src={poster} width="280" height="398" alt="movie-poster"/> 
+            <img src={poster} loading={"lazy"} width="280" height="398" alt="movie-poster"/> 
             
             <CardDescription className="card__description" themeStyle={status}>
                 <MovieTitle className="movie-name">{title}</MovieTitle>
