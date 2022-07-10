@@ -1,7 +1,6 @@
 import { AuthBtn, EntriesWrapper, LogOutWrapper, LogoutBtn } from './Authentication.styled';
 import { useState } from 'react';
 import { ModalWindow, LoginForm, RegisterForm } from 'components';
-import { useEffect } from 'react';
 import { userRegistration, userLogin } from "API/userAPI"
 import { useAuthStatusContext } from 'Hooks/AuthStatus';
 import { useUserDataContext } from 'Hooks/userData';
