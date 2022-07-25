@@ -3,12 +3,40 @@ import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
 export const NavigationLinksList = styled.ul`
+    display: flex;
+    justify-content: center;
+
+    & li {
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+    @media screen and (min-width: 250px){
+        & li {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+    @media screen and (min-width: 290px) and (max-width: 319px){
+        & li {
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+    @media screen and (min-width: 320px) {
+        
+        & li {
+            &:not(:last-child) {
+                margin-right: 40px;
+            }
+        }
+    }
     
 `;
 export const NavigationLinksItem = styled.li`
-    &:not(:last-child) {
-        margin-right: 39px;
-    }
+    
 `;
 export const NavigationLink = styled(NavLink)`
     color: #fff;

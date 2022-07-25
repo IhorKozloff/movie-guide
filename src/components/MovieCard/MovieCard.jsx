@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieTitle, MovieSpesification, MovieReleaseDelimeter, MovieRelease, MovieRating, CardDescription, MovieGenres } from "components/MovieCard/MovieCard.styled"; 
+import { MovieTitle, MovieSpesification, MovieReleaseDelimeter, MovieRelease, MovieRating, CardDescription, MovieGenres, MovieCardImage } from "components/MovieCard/MovieCard.styled"; 
 import { useThemeContext } from 'Hooks/ThemeContext';
 
    
@@ -9,7 +9,7 @@ export const MovieCard = ({poster, title, genre, releaseDate, vote_average, id, 
 
     return (
         <>
-            <img src={poster} loading={"lazy"} width="280" height="398" alt="movie-poster"/> 
+            <MovieCardImage src={poster} loading={"lazy"} alt="movie-poster"/> 
             
             <CardDescription className="card__description" themeStyle={status}>
                 <MovieTitle className="movie-name">{title}</MovieTitle>

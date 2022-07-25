@@ -7,3 +7,4 @@ export * from "./GenresFormating";
 export * from "./voteConverter";
 export * from "./MovieListDataCreator"
 export * from "./MoreBtnStatusChanger";
+export * from "./EmailSeparator"

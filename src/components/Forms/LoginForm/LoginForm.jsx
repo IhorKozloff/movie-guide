@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-import { Input, EntriesButton } from "components/Forms/FormComponents";
+import { Input, EntriesButton, FormTittle } from "components/Forms/FormComponents";
 import { StyledLink } from "components"
 import { UserLoginForm } from "components/Forms/LoginForm/LoginForm.styled";
 
@@ -17,7 +17,7 @@ export const LoginForm = ({onSubmitLoginForm}) => {
     <Formik initialValues={{email:"", password:""}} onSubmit={onFormSubmit}>
         
         <UserLoginForm name='UserLoginForm'>
-        <h3 style={{marginBottom: "71px"}}>Log in into your account </h3>
+        <FormTittle>Log in into your account </FormTittle>
             <Input type={'email'}>
                 Email
             </Input>

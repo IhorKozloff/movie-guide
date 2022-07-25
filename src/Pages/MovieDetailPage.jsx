@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate} from 'react-router-dom';
 import * as apiService from "API/moviesAPI";
-import { MovieReview, ControlBar, GoBackBtn, MovieTrailer } from 'components';
+import { MovieReview, ControlBar, GoBackBtn, MovieTrailer, MovieDetailsPageWrapper } from 'components';
 import { useThemeContext } from 'Hooks/ThemeContext';
 
 export default function MovieDetailPage () {
@@ -48,7 +48,7 @@ export default function MovieDetailPage () {
     };
 
     return (
-        <div className='movie-details-page-wrapper' style={{position: "relative"}}>
+        <MovieDetailsPageWrapper className='movie-details-page-wrapper'>
             <GoBackBtn onBackBtn={onBackBtn} themeDecor={status}/>
 
             {reviewData && <MovieReview data={reviewData} themeDecor={status}/>}
@@ -61,7 +61,7 @@ export default function MovieDetailPage () {
             <MovieTrailer movieId={movieId}>
 
             </MovieTrailer>
-        </div>
+        </MovieDetailsPageWrapper>
             
 
     )

@@ -1,5 +1,6 @@
 import React from 'react';
-import { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName } from 'components/Header/Header.styled'
+import { HeaderSection, NavigationWrapper, LogoWrapper, LogoName } from 'components/Header/Header.styled'
+import { Container } from 'components';
 import { Navigation } from 'components/Header/Navigation/Navigation'
 import { IconSVG } from 'Utils/Icons';
 
@@ -8,8 +9,8 @@ export const LibraryHeader = () => {
 
 
     return (
-        <header className="header-section">
-        <HeaderContainer className="container header-container">
+        <HeaderSection className="header-section">
+        <Container className="container header-container">
             <NavigationWrapper>
 
                 <LogoWrapper className="logo-wrapper">
@@ -23,7 +24,7 @@ export const LibraryHeader = () => {
 
 
             
-        </HeaderContainer>
-    </header>
+        </Container>
+    </HeaderSection>
     )
 }

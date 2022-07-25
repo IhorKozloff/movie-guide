@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import * as headerStyles from 'components/Header/Header.styled'
-import { Navigation, SearchBar, Authentication, ThemeSwitcher} from 'components/Header';
+import { Navigation, SearchBar, Authentication, ThemeSwitcher, MenuButton} from 'components/Header';
+import { Container } from 'components';
 import { IconSVG } from 'Utils/Icons';
 
 
 export const Header = ({pageStatus}) => {
-    const { HeaderContainer, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink, AuthWrapper } = headerStyles;
+    const {HeaderSection, NavigationWrapper, LogoWrapper, LogoName, LibraryButtonsWrapper, ButtonLink, AuthWrapper } = headerStyles;
     const [onPage, setOnPage] = useState();
-    
+    const [activeStatus, setActiveStatus] = useState(false);
+
+    function onBurgerMenuBtnClick () {
+        setActiveStatus(!activeStatus);
+    }
 
 
     useEffect(() => {
@@ -15,24 +20,27 @@ export const Header = ({pageStatus}) => {
     },[pageStatus]);
 
     return (
-        <>
-            <header className="header-section">
-                <HeaderContainer page={onPage} className="container header-container">
-                    <NavigationWrapper>
+
+            <HeaderSection className="header-section" page={pageStatus}>
+                <Container page={onPage}  className="header-container">
+
+                
+                    <NavigationWrapper className='navigation-wrapper'>
 
                         <LogoWrapper className="logo-wrapper">
                             <IconSVG id={"header-logo-icon"}/>
                             <LogoName className="logo-name">Movie Guide Hub</LogoName>
                         </LogoWrapper>
 
-                        <Navigation/>
-                        <AuthWrapper>
+                        <Navigation className="navigation"/>
+
+                        <MenuButton className="menu-button" onBtnClick={onBurgerMenuBtnClick} activeStatus={activeStatus}></MenuButton>
+
+                        <AuthWrapper className='auth-wrapper' activeStatus={activeStatus}>
                             <Authentication/>
-                            
-                            <ThemeSwitcher/>
+                            <ThemeSwitcher/>                          
                         </AuthWrapper>
-                       
-                        
+
                     </NavigationWrapper>
                     
                     {onPage === 'home' && <SearchBar/>}
@@ -45,9 +53,9 @@ export const Header = ({pageStatus}) => {
 
                     </LibraryButtonsWrapper>}
                     
-                </HeaderContainer>
-            </header>
-        </>
+                </Container>
+            </HeaderSection>
+
     )
 };
 

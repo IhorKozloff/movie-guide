@@ -5,9 +5,13 @@ export const SearchForm = styled(Form)`
     width: 100%;
     position: relative;
     display: flex;
+    @media screen and (min-width: 768px) {
+        width: 336px;
+        margin: 0 auto;
+    }
 `;
 export const SearchFormTextArea = styled(Field)`
-    width: 22%;
+    width: 100%;
     color: #fff;
     font-size: 14px;
     line-height: 1.14;

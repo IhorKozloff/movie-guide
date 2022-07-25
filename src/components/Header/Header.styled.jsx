@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+
+
 // for home
 import headerHomeBackgroundDesctop from 'images/header-background-desktop-x1.jpg';
 import headerHomeBackgroundTablet from 'images/header-background-tablet-x1.jpg';
@@ -10,29 +12,34 @@ import headerLibraryBackgroundTablet from 'images/headerInLibrary/header-inLibra
 import headerLibraryBackgroundMobile from 'images/headerInLibrary/header-inLibrary-mobile.jpg';
 
 
+export const HeaderSection = styled.header`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 41px;
+    padding-bottom: 97px;
 
-
-
-export const HeaderContainer = styled.section`
     position: relative;
-    padding: 46px 20px 20px 20px;
-    background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundMobile : headerHomeBackgroundMobile}");
- 
     background-repeat: no-repeat;
     background-size: cover;
-    
-    @media (min-width: 321px) {
-        padding: 46px 76px 20px 71px;
+
+    background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundMobile : headerHomeBackgroundMobile}");
+
+    @media (min-width: 768px) {
+        
         background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundTablet : headerHomeBackgroundTablet}");
     }
-    @media (min-width: 769px) {
+    @media (min-width: 1024px) {
         background-image: url("${props => props.page === 'library' ? headerLibraryBackgroundDesctop : headerHomeBackgroundDesctop}");
     }
 `;
 export const NavigationWrapper = styled.nav`
+   
+    margin-bottom: 41px;
+    position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 41px;
     justify-content:space-between;
 `;
 export const LogoWrapper = styled.div`
@@ -40,18 +47,28 @@ export const LogoWrapper = styled.div`
     align-items: center;
 `;
 export const LogoName = styled.span`
+    display: none;
     color: #fff;
     font-weight: 500;
-    font-size: 30px;
-    line-height: 35px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    
     margin-left: 10px;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        line-height: 22px;
+    }
+    @media screen and (min-width: 1024px) {
+
+        font-size: 30px;
+        line-height: 35px;
+    }
 `;
 export const ButtonLink = styled(NavLink)`
     display: flex;
-    width: 140px;
+    width: 100px;
     height: 45px;
     border: 1px solid black;
     cursor: pointer;
@@ -77,15 +94,55 @@ export const ButtonLink = styled(NavLink)`
             background-color: #810114;
             color: #FFF
         }
+        @media screen and (min-width: 320px) {
+            width: 130px;
+        }
+        @media screen and (min-width: 768px) {
+            width: 136px;
+        }
 `;
 export const LibraryButtonsWrapper = styled.div`
-    max-width: 310px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+    @media screen and (min-width: 320px) {
+        width: 280px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 287px;
+    }
 `;
 export const AuthWrapper = styled.div`
-    display: flex;
-    justify-content:start;
-    align-items: center;
+
+    @media screen and (max-width: 767px) {
+        ${props => props.activeStatus === true ? `display: flex;` : `display: none;`}
+
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 2;
+        background-color: #1A1634;
+        box-sizing: border-box;
+        border: 1px solid gray;
+        padding: 10px;
+        height: 120px;     
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: flex-end;
+    }
+
+    @media screen and (max-width: 319px) {
+        width: 100%;
+    }
+    @media screen and (min-width: 320px) {
+        width: 280px;
+    }
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+    }
 `;

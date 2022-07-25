@@ -1,5 +1,5 @@
 import {MovieReviewWrapper, ImageWrapper, InformBlock, MovieInformItem, ItemName, 
-  ItemValue, MovieDescription, DescriptionText, MovieInformList} from "components/MovieReview/MovieReview.styled";
+  ItemValue, MovieDescription, DescriptionText, MovieInformList, MovieReviewImage, InformTitle} from "components/MovieReview/MovieReview.styled";
 
 
 import { posterGuard } from 'Utils/PosterGuard';
@@ -12,13 +12,13 @@ export const MovieReview = ({data, themeDecor}) => {
 
     return (
         
-        <MovieReviewWrapper themeDecor={themeDecor}>
+        <MovieReviewWrapper className="movie-review-wrapper" themeDecor={themeDecor}>
           <ImageWrapper className="image-wrapper">
-            <img src={posterGuard(poster_path, 'large')} alt="movie-poster" width="400px" height="477px"></img>
+            <MovieReviewImage src={posterGuard(poster_path, 'large')} alt="movie-poster"></MovieReviewImage>
           </ImageWrapper>
 
           <InformBlock className="inform-block">
-            <h2>{original_title}</h2>
+            <InformTitle>{original_title}</InformTitle>
             <MovieInformList className="movie-inform-list" themeDecor={themeDecor}>
 
               <MovieInformItem className="movie-inform-item">
@@ -44,7 +44,7 @@ export const MovieReview = ({data, themeDecor}) => {
             </MovieInformList>
             
             <MovieDescription className="movie-description">
-              <p>About </p>
+              <p>ABOUT</p>
               <DescriptionText className="description-text">{overview}</DescriptionText>
             </MovieDescription>
 

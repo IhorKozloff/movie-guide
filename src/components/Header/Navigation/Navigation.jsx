@@ -5,7 +5,7 @@ import { NavigationLinksList, NavigationLinksItem, NavigationLink } from 'compon
 export const Navigation = () => {
     return (
         <>
-        <NavigationLinksList>
+        <NavigationLinksList className="navigation-links-list">
             <NavigationLinksItem>
                 <NavigationLink to="/">home</NavigationLink>
             </NavigationLinksItem>

@@ -4,16 +4,15 @@ export const MovieTrailerWrapper = styled.div`
 
 `;
 export const MovieTrailerBtn = styled.button`
-border: none;
-overflow: hidden;
+    dispaly: none;
+    border: none;
+    overflow: hidden;
     position: absolute;
     top: 190px;
     left: 150px;
-    width: 120px;
-    height: 80px;
     border-radius: 20px;
     background: #fff;
-    opacity: 0.5;
+    opacity: 0.3;
     cursor: pointer;
     transition: opacity 500ms ease;
     &:hover {
@@ -28,6 +27,20 @@ overflow: hidden;
         left: -8px;
         transform: translateY(-50px);
         border: 1px solid black;
+    }
+    @media screen and (min-width: 320px) {
+        width: 120px;
+        height: 80px;
+        top: 140px;
+        left: 80px;
+    }
+    @media screen and (min-width: 768px) {
+        top: 190px;
+        left: 100px;
+    }
+    @media screen and (min-width: 1024px) {
+        top: 240px;
+        left: 170px;
     }
 `;
 export const MovieTrailerPlayer = styled.iframe`

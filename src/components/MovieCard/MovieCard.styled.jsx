@@ -1,5 +1,30 @@
 import styled from '@emotion/styled';
 
+
+
+export const MovieCardImage = styled.img`
+    display: block; 
+    width: 100%;
+    height: 240px;
+    @media screen and (min-width: 190px) {
+        height: 300px;
+    }
+    @media screen and (min-width: 260px) {
+        height: 350px;
+    }
+    @media screen and (min-width: 280px) {
+        width: 280px;
+        height: 398px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 295px;
+    }
+    @media screen and (min-width: 1024px) {
+        width: 274px;
+
+    }
+
+`;
 export const CardDescription = styled.div`
     background-color: ${props => props.themeStyle === "light" ? "none" : "#95949A"};
     height: 46px;
@@ -7,6 +32,7 @@ export const CardDescription = styled.div`
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
+    background-color: gray;
 `;
 
 

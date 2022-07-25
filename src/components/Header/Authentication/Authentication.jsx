@@ -1,9 +1,10 @@
-import { AuthBtn, EntriesWrapper, LogOutWrapper, LogoutBtn } from './Authentication.styled';
+import { AuthBtn, EntriesAndLogOutWrapper, LogoutBtn, UserEmail, EmailName, EmailPrefix, AuthBtnList } from './Authentication.styled';
 import { useState } from 'react';
 import { ModalWindow, LoginForm, RegisterForm } from 'components';
 import { userRegistration, userLogin } from "API/userAPI"
 import { useAuthStatusContext } from 'Hooks/AuthStatus';
 import { useUserDataContext } from 'Hooks/userData';
+import { emailSeparate } from 'Utils'
 
 
 export const Authentication = () => {
@@ -87,15 +88,15 @@ export const Authentication = () => {
     return(
         <>
         {
-            authorizationStatus === "no authorized" && <EntriesWrapper>
-                <ul>
+            authorizationStatus === "no authorized" && <EntriesAndLogOutWrapper>
+                <AuthBtnList>
                     <li>
                         <AuthBtn type='button' name="login" onClick={onEnterBtnClick}>login</AuthBtn>
                     </li>
                     <li>
                         <AuthBtn type='button' name="register" onClick={onEnterBtnClick}>register</AuthBtn>
                     </li>
-                </ul>
+                </AuthBtnList>
 
                 {loginFormActiveStatus && <ModalWindow onClose={closeAuthForm}>
                     <LoginForm onSubmitLoginForm={onSubmitLoginForm}/>
@@ -103,13 +104,17 @@ export const Authentication = () => {
                 {registerFormActiveStatus && <ModalWindow onClose={closeAuthForm}>
                     <RegisterForm onSubmitRegisterForm={onSubmitRegisterForm}/>
                 </ModalWindow>}
-            </EntriesWrapper>
+            </EntriesAndLogOutWrapper>
         }
             
-            {authorizationStatus === "authorized" && <LogOutWrapper>
-                    <p style={{color: 'white'}}>{userData.email}</p>
+            {authorizationStatus === "authorized" && <EntriesAndLogOutWrapper>
+                    <UserEmail>
+                        <EmailName>{emailSeparate(userData.email).emailName}</EmailName>
+                        <EmailPrefix>{emailSeparate(userData.email).emailPrefix}</EmailPrefix>
+                    </UserEmail>
+                    
                     <LogoutBtn onClick={onLogoutBtn}>Log out</LogoutBtn>
-                </LogOutWrapper>
+                </EntriesAndLogOutWrapper>
             }
         </>
         

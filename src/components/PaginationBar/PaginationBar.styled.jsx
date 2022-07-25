@@ -1,16 +1,15 @@
 import styled from '@emotion/styled';
 
 export const PaginationWrapper = styled.div`
-    width: 100%;
+    width: 100%; 
+    padding: 5px 0;
+`;
+export const PaginationList = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
-    // background-color: aqua;
-    // border: 1px solid black;
 `;
 export const PaginationListItem = styled.li`
-
     padding-top: 3px;
     padding-bottom: 3px;
     border-radius: 5px;

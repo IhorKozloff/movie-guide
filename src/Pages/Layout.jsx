@@ -14,7 +14,7 @@ export default function Layout () {
             <Header pageStatus={'home'}/>
             
                 <Section  className="main" backgroundTheme={status}>
-                    <Container backgroundTheme={status}>
+                    <Container className="container" backgroundTheme={status}>
                         <Suspense fallback={<div>Loading...</div>}>
                             <Outlet/>
                         </Suspense>

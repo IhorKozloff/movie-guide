@@ -1,4 +1,4 @@
-import { PaginationWrapper, PaginationListItem, PaginationButton } from "./PaginationBar.styled";
+import { PaginationWrapper, PaginationListItem, PaginationButton, PaginationList } from "./PaginationBar.styled";
 
 export const PaginationBar = ({totalPages, setCurrentPage, currentPage}) => {
 
@@ -31,9 +31,9 @@ function paginationStartArrCreator (count) {
 
     return (
         <PaginationWrapper>
-            <ul>
+            <PaginationList>
                 {paginationStartArrCreator(totalPages)}
-            </ul>
+            </PaginationList>
         </PaginationWrapper>
     )
 }
