@@ -32,7 +32,6 @@ export const CardDescription = styled.div`
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
-    background-color: gray;
 `;
 
 
