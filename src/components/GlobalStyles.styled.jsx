@@ -40,9 +40,7 @@ export const Container = styled.div`
 export const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: #000;
-    font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
     font-size: 19px;
     line-height: 23px;
     &.active {

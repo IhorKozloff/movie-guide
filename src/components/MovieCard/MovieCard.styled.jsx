@@ -13,14 +13,14 @@ export const MovieCardImage = styled.img`
         height: 350px;
     }
     @media screen and (min-width: 280px) {
-        width: 280px;
+        //width: 278px;
         height: 398px;
     }
     @media screen and (min-width: 768px) {
-        width: 295px;
+        //width: 293px;
     }
     @media screen and (min-width: 1024px) {
-        width: 274px;
+        //width: 272px;
 
     }
 
@@ -32,6 +32,7 @@ export const CardDescription = styled.div`
     flex-direction: column;
     align-items: left;
     justify-content: space-between;
+    padding-top: 10px;
 `;
 
 

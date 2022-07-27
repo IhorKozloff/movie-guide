@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
 
-
+import mobileMenuBackground from 'images/mobile-menu-wallpaper.jpg';
 // for home
 import headerHomeBackgroundDesctop from 'images/header-background-desktop-x1.jpg';
 import headerHomeBackgroundTablet from 'images/header-background-tablet-x1.jpg';
@@ -117,32 +117,95 @@ export const LibraryButtonsWrapper = styled.div`
 export const AuthWrapper = styled.div`
 
     @media screen and (max-width: 767px) {
-        ${props => props.activeStatus === true ? `display: flex;` : `display: none;`}
+        background-image: url("${mobileMenuBackground}");
+        background-repeat: no repeat;
+        background-size: cover;
 
-        position: absolute;
-        top: 40px;
-        left: 0;
+
+        ${props => props.activeStatus === true ? `display: flex;` : `display: none;`}
+        width: 60vw;
+        position: fixed;
+        top: 0;
+        right: 0;
         z-index: 2;
         background-color: #1A1634;
         box-sizing: border-box;
-        border: 1px solid gray;
-        padding: 10px;
-        height: 120px;     
-        flex-direction: column-reverse;
-        justify-content: start;
-        align-items: flex-end;
-    }
 
-    @media screen and (max-width: 319px) {
-        width: 100%;
+        border-left: 2px solid white;
+        border-top: 2px solid white;
+        border-bottom: 2px solid white;
+
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        padding: 40px 10px 40px 10px;
+        height: 100vh;     
+        
+
+        & .menu-button-wrapper {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+        }
     }
-    @media screen and (min-width: 320px) {
-        width: 280px;
+    
+    @media screen and (min-width: 420px) {
+        width: 50vw;
     }
+    @media screen and (min-width: 500px) {
+        width: 40vw;
+    }
+ 
 
     @media screen and (min-width: 768px) {
-        display: flex;
-        justify-content: space-between;
-        width: 200px;
+        width: 240px;
+    }
+`;
+export const AuthContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: 767px) {
+        width: 100%;
+        height: 100%;
+        border: 2px solid grey;
+        border-radius: 10px;
+        padding: 10px;
+
+        flex-direction: column-reverse;
+        justify-content: start;
+        align-items: flex-start;
+
+    }
+
+`;
+
+export const ExtendedMenuList = styled.ul`
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+`;
+export const ExtendedMenuListItem = styled.li`
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    & a {
+        color: white;
+        font-size: 16px;
+        line-height: 1.16;
+        font-weight: 500;
+        text-transform: uppercase;
+        display: block;
+        margin-left: 10px;
     }
 `;

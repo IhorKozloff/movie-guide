@@ -15,7 +15,7 @@ export const MovieListItem = styled.li`
     box-sizing: border-box;
     border:${props => props.themeStyle === "light" ? "none" : "1px solid #95949A"};
     margin: 20px auto auto auto;
-
+    width: 99%;
     @media screen and (min-width: 280px) {
         width: 280px;
     }

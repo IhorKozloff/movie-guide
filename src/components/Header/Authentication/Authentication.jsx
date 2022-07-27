@@ -4,7 +4,7 @@ import { ModalWindow, LoginForm, RegisterForm } from 'components';
 import { userRegistration, userLogin } from "API/userAPI"
 import { useAuthStatusContext } from 'Hooks/AuthStatus';
 import { useUserDataContext } from 'Hooks/userData';
-import { emailSeparate } from 'Utils'
+import { emailSeparate, IconSVG } from 'Utils'
 
 
 export const Authentication = () => {
@@ -91,9 +91,11 @@ export const Authentication = () => {
             authorizationStatus === "no authorized" && <EntriesAndLogOutWrapper>
                 <AuthBtnList>
                     <li>
+                        <IconSVG id={"icon-login"}/>
                         <AuthBtn type='button' name="login" onClick={onEnterBtnClick}>login</AuthBtn>
                     </li>
                     <li>
+                        <IconSVG id={"icon-register"}/>
                         <AuthBtn type='button' name="register" onClick={onEnterBtnClick}>register</AuthBtn>
                     </li>
                 </AuthBtnList>

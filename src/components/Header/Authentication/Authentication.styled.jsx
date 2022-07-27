@@ -5,13 +5,17 @@ export const AuthBtn = styled.button`
     color: #FFF;
     font-size: 12px;
     line-height: 1.16;
-    font-weight: 500;
+    font-weight: 600;
     
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
     border: none;
     background: none;
+
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
+    }
 `;
 
 
@@ -24,10 +28,16 @@ export const EntriesAndLogOutWrapper = styled.div`
     }
 `;
 export const AuthBtnList = styled.ul`
-    margin-top: 20px;
+    margin-top: 50px;
     & li {
         margin: 0 0 20px 0;
         text-align: end;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        & button {
+            margin-left: 10px;
+        }
     }
     @media screen and (min-width: 768px) {
         display: flex;
@@ -37,6 +47,9 @@ export const AuthBtnList = styled.ul`
         margin-top: 0;
 
         & li {
+            & svg {
+                display: none;
+            }
             margin: 0 0 0 30px;
         }
     }
