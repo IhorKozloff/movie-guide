@@ -4,7 +4,7 @@ import { UserRegisterForm } from "components/Forms/RegisterForm/RegisterForm.sty
 import { InputsWrapper } from "components/Forms/FormComponents/InputsWrapper.styled";
 
 
-
+const initialValues = {name:"", email:"", password:""}
 
 export const RegisterForm = ({onSubmitRegisterForm}) => {
 
@@ -16,7 +16,7 @@ export const RegisterForm = ({onSubmitRegisterForm}) => {
 
     return (
         <>
-    <Formik initialValues={{username:"", email:"", password:""}} onSubmit={onFormSubmit}>
+    <Formik initialValues={initialValues} onSubmit={onFormSubmit}>
         <UserRegisterForm name='UserRegisterForm'>
 
             <FormTittle>Sign Up for Contacts Book</FormTittle>

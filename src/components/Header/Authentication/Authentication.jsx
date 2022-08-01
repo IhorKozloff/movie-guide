@@ -10,7 +10,8 @@ import { emailSeparate, IconSVG } from 'Utils'
 export const Authentication = () => {
 
     const {authorizationStatus, setAuthorizationStatus} = useAuthStatusContext();
-    const { userData } = useUserDataContext();
+    const { userData,  setUserData} = useUserDataContext();
+    console.log(userData)
 
     const [loginFormActiveStatus, SetLoginFormActiveStatus] = useState(false);
     const [registerFormActiveStatus, SetRegisterFormActiveStatus] = useState(false);
@@ -22,6 +23,7 @@ export const Authentication = () => {
 
         localStorage.setItem("authorization", "authorized");
         setAuthorizationStatus("authorized");
+        setUserData({token, email})
     }
 
 
@@ -58,6 +60,7 @@ export const Authentication = () => {
             console.log(response);
 
             authStorageSetter(response);
+            
                     
         } catch (error) {
             console.log(error)

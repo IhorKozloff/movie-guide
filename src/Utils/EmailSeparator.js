@@ -1,5 +1,6 @@
 export const emailSeparate = (email) => {
-    const arr = email.split("@");
-    
-return {emailName: arr[0], emailPrefix: arr[1]}
-}
+
+    const [emailName, emailPrefix] = email.split("@");
+    return {emailName, emailPrefix}
+
+};

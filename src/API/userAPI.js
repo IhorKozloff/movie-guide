@@ -21,6 +21,7 @@ export const userRegistration = async (registrationData) => {
             console.log(error)
         }
 };
+
 export const userLogin = async (loginData) => {
     try {
         const response = await axios.post(`${BASE_URL}/users/login`, loginData);
