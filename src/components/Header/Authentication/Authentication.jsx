@@ -117,7 +117,7 @@ export const Authentication = () => {
                 <EntriesAndLogOutWrapper className='entries-and-logout-wrapper logout'>
                     <UserEmail className='user-email-wrapper'>
                         <EmailName className='user-email__name'>{emailSeparate(userData.email).emailName}</EmailName>
-                        <EmailPrefix className='user-email__prefix'>{emailSeparate(userData.email).emailPrefix}</EmailPrefix>
+                        <EmailPrefix className='user-email__prefix'>@{emailSeparate(userData.email).emailPrefix}</EmailPrefix>
                     </UserEmail>
                     
                     <LogoutBtn className="logout-btn" onClick={onLogoutBtn}>

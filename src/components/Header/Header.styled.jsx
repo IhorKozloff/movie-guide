@@ -39,8 +39,8 @@ export const NavigationWrapper = styled.nav`
     margin-bottom: 41px;
     position: relative;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content:space-between;
 `;
 export const LogoWrapper = styled.div`
     display: flex;
@@ -157,21 +157,20 @@ export const AuthWrapper = styled.div`
         }
     }
     
-    @media screen and (min-width: 420px) {
+    @media screen and (min-width: 420px) and (max-width: 499px){
         width: 50vw;
     }
-    @media screen and (min-width: 500px) {
+    @media screen and (min-width: 500px) and (max-width: 767px) {
         width: 40vw;
     }
- 
 
-    @media screen and (min-width: 768px) {
-        width: 240px;
-    }
+
+
+
 `;
 export const AuthContent = styled.div`
     display: flex;
-    justify-content: space-between;
+    align-items: center;
 
     @media screen and (max-width: 767px) {
         width: 100%;
@@ -186,10 +185,15 @@ export const AuthContent = styled.div`
 
     }
 
+    @media screen and (min-width: 1024px) {
+        justify-content: space-between;
+    }
+
 `;
 
 export const ExtendedMenuList = styled.ul`
     width: 100%;
+    margin-top: 10px;
     @media screen and (min-width: 768px) {
         display: none;
     }

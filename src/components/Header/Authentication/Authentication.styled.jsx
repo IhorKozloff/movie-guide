@@ -20,22 +20,29 @@ export const AuthBtn = styled.button`
 
 
 export const EntriesAndLogOutWrapper = styled.div`
-    margin-right: 5px;
-    display: flex;
-    align-items: center;
+   
+    margin-top: 30px;
+
     &.logout {
         flex-direction: row-reverse;
     }
+
     @media screen and (min-width: 768px) {
-        width: 250px;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+
         margin-right: 10px;
+        margin-top: 0;
+
         &.logout {
             flex-direction: row;
         }
     }
 `;
 export const AuthBtnList = styled.ul`
-    margin-top: 50px;
+
     & li {
         margin: 0 0 20px 0;
         text-align: end;
@@ -51,7 +58,7 @@ export const AuthBtnList = styled.ul`
         justify-content: end;
         align-items: center;
 
-        margin-top: 0;
+        margin-top: 4px;
 
         & li {
             & svg {
@@ -78,7 +85,14 @@ export const EmailName = styled.p`
 `;
 export const EmailPrefix = styled.p`
     display: none;
-    @media screen and (min-width: 768px) {
+
+
+
+
+    @media screen and (min-width: 620px) and (max-width: 767px) {
+        display: block;
+    }
+    @media screen and (min-width: 1024px) {
         display: block;
     }
 `; 
@@ -92,6 +106,7 @@ export const LogoutBtn = styled.button`
     border: none;
     transition: transform 500ms ease;
     background: none;
+    padding-top: 2px;
 
     &:active {
         transform: scale(0.9);
