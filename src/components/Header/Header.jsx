@@ -42,10 +42,10 @@ export const Header = ({pageStatus}) => {
                                     <MenuButton className="menu-button" onBtnClick={onBurgerMenuBtnClick} activeStatus={activeStatus}></MenuButton>
                                 </div>
                                 
-                                <ExtendedMenuList>
-                                    <ExtendedMenuListItem>
-                                        <IconSVG id={"icon-info"}/>
-                                        <StyledLink to={"/about"}>About us</StyledLink>
+                                <ExtendedMenuList className='extended-menu'>
+                                    <ExtendedMenuListItem className='extended-menu__item'>
+                                        <IconSVG className='extended-menu__icon' id={"icon-info"}/>
+                                        <StyledLink className='extended-menu__link' to={"/about"}>About us</StyledLink>
                                     </ExtendedMenuListItem>
                                 </ExtendedMenuList>    
                                 <Authentication/>

@@ -8,12 +8,18 @@ export const BackButtonWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 767px) {
+        top: 45px;
+    }
 `;
 
 export const BackButtonTittle = styled.p`
     color: ${props => props.themeDecor === "light" ? "#000" : "#FFF"};
     margin-left: 5px;
     font-weight: 800;
+    @media screen and (max-width: 767px) {
+        color: white;
+    }
 `;
 
 export const BackButton = styled.button`
@@ -29,10 +35,15 @@ export const BackButton = styled.button`
     & svg {
         fill: ${props => props.themeDecor === "light" ? "#000" : "#FFF"};
         transition: fill 500ms ease;
+        @media screen and (max-width: 767px) {
+            fill: white;
+        }
     }
     &:hover {
         & svg {
             fill: green;
+          
         }
     }
+    
 `;

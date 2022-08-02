@@ -23,8 +23,15 @@ export const EntriesAndLogOutWrapper = styled.div`
     margin-right: 5px;
     display: flex;
     align-items: center;
+    &.logout {
+        flex-direction: row-reverse;
+    }
     @media screen and (min-width: 768px) {
-        width: 160px;
+        width: 250px;
+        margin-right: 10px;
+        &.logout {
+            flex-direction: row;
+        }
     }
 `;
 export const AuthBtnList = styled.ul`
@@ -68,7 +75,6 @@ export const UserEmail = styled.div`
     }
 `;
 export const EmailName = styled.p`
-    
 `;
 export const EmailPrefix = styled.p`
     display: none;
@@ -78,26 +84,22 @@ export const EmailPrefix = styled.p`
 `; 
 
 export const LogoutBtn = styled.button`
-    margin-left: 5px;
+
+    
     width: 30px;
     height: 30px;
-    border: none;
-    font-weight: bolder;
     cursor: pointer;
-    border-radius: 5px;
-    background-color:${props => props.activeStatus ? 'orange' : 'white'};
+    border: none;
     transition: transform 500ms ease;
-    transition: box-shadow 500ms ease;
+    background: none;
 
-    &:hover {
-        transition: transform 500ms ease;
-        transition: box-shadow 500ms ease;
-        background-color: #FF6B01;
-        color: #FFF;
-        box-shadow: 5px 5px 10px 1px #B1AEAB;
-        transform: scale(1.05);
-    }
     &:active {
         transform: scale(0.9);
+    }
+    & svg {
+        fill: white;
+    }
+    @media screen and (min-width: 768px) {
+        margin-left: 20px;
     }
 `;

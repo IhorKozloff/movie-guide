@@ -91,15 +91,16 @@ export const Authentication = () => {
     return(
         <>
         {
-            authorizationStatus === "no authorized" && <EntriesAndLogOutWrapper>
-                <AuthBtnList>
-                    <li>
-                        <IconSVG id={"icon-login"}/>
-                        <AuthBtn type='button' name="login" onClick={onEnterBtnClick}>login</AuthBtn>
+            authorizationStatus === "no authorized" &&
+            <EntriesAndLogOutWrapper className='entries-and-logout-wrapper'>
+                <AuthBtnList className='auth-btn__list'>
+                    <li className='auth-btn__item'>
+                        <IconSVG className='auth-btn__item-icon' id={"icon-login"}/>
+                        <AuthBtn className='auth-btn__item-button' type='button' name="login" onClick={onEnterBtnClick}>login</AuthBtn>
                     </li>
-                    <li>
-                        <IconSVG id={"icon-register"}/>
-                        <AuthBtn type='button' name="register" onClick={onEnterBtnClick}>register</AuthBtn>
+                    <li className='auth-btn__item'>
+                        <IconSVG className='auth-btn__item-icon' id={"icon-register"}/>
+                        <AuthBtn className='auth-btn__item-button' type='button' name="register" onClick={onEnterBtnClick}>register</AuthBtn>
                     </li>
                 </AuthBtnList>
 
@@ -112,13 +113,16 @@ export const Authentication = () => {
             </EntriesAndLogOutWrapper>
         }
             
-            {authorizationStatus === "authorized" && <EntriesAndLogOutWrapper>
-                    <UserEmail>
-                        <EmailName>{emailSeparate(userData.email).emailName}</EmailName>
-                        <EmailPrefix>{emailSeparate(userData.email).emailPrefix}</EmailPrefix>
+            {authorizationStatus === "authorized" && 
+                <EntriesAndLogOutWrapper className='entries-and-logout-wrapper logout'>
+                    <UserEmail className='user-email-wrapper'>
+                        <EmailName className='user-email__name'>{emailSeparate(userData.email).emailName}</EmailName>
+                        <EmailPrefix className='user-email__prefix'>{emailSeparate(userData.email).emailPrefix}</EmailPrefix>
                     </UserEmail>
                     
-                    <LogoutBtn onClick={onLogoutBtn}>Log out</LogoutBtn>
+                    <LogoutBtn className="logout-btn" onClick={onLogoutBtn}>
+                        <IconSVG className='logout-btn__icon' id={"icon-logout"}></IconSVG>
+                    </LogoutBtn>
                 </EntriesAndLogOutWrapper>
             }
         </>

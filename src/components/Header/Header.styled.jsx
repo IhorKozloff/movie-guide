@@ -118,7 +118,7 @@ export const AuthWrapper = styled.div`
 
     @media screen and (max-width: 767px) {
         background-image: url("${mobileMenuBackground}");
-        background-repeat: no repeat;
+        background-repeat: no-repeat;
         background-size: cover;
 
 

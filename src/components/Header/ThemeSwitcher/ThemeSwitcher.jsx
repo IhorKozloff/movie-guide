@@ -30,13 +30,13 @@ export const ThemeSwitcher = () => {
 
 
     return(
-        <ThemeSwitcherWrapper>
-            {status === "light" && <ThemeBtn type='submit' name='setLightTheme' onClick={setTheme}>
-                <IconSVG id={'icon-light-theme'}/>
+        <ThemeSwitcherWrapper className='theme-switcher'>
+            {status === "light" && <ThemeBtn className='theme-switcher__button' type='submit' name='setLightTheme' onClick={setTheme}>
+                <IconSVG className='theme-switcher__icon' id={'icon-light-theme'}/>
             </ThemeBtn>}
             
-            {status === "dark" && <ThemeBtn type='submit' name='setDarkTheme' onClick={setTheme}>
-                <IconSVG id={'icon-dark-theme'}/>
+            {status === "dark" && <ThemeBtn className='theme-switcher__button' type='submit' name='setDarkTheme' onClick={setTheme}>
+                <IconSVG className='theme-switcher__icon' id={'icon-dark-theme'}/>
             </ThemeBtn>}
         </ThemeSwitcherWrapper>
         
