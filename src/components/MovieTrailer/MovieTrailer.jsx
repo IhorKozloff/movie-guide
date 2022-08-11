@@ -16,7 +16,7 @@ export const MovieTrailer = ({movieId}) => {
 
         const key = result[0].key
 
-        const youtubeLink = `http://www.youtube.com/embed/${key}?autoplay=1`
+        const youtubeLink = `https://www.youtube.com/embed/${key}?autoplay=1`
 
         setYouTubeRef(youtubeLink)
         setPlayerStatus("on")
