@@ -3,6 +3,7 @@ import { IconSVG } from 'Utils';
 import { searchAPIVideos } from 'API/moviesAPI'
 import { ModalWindow } from 'components'
 import { useState } from 'react';
+import Media from 'react-media';
 
 export const MovieTrailer = ({movieId}) => {
 
@@ -27,16 +28,6 @@ export const MovieTrailer = ({movieId}) => {
         setPlayerStatus("off")
     }
 
-    // function modalWindowTrailerRender ({key}) {
-    //     const youTubeRef = `http://www.youtube.com/embed/${key}`;
-    //         console.log(youTubeRef);
-    //         const trailerMurkUp = `
-    //             <iframe id="ytplayer" type="text/html" width="890" height="600" frameborder="0" allowfullscreen allow="autoplay" 
-    //             src="http://www.youtube.com/embed/${key}?autoplay=1"></iframe>
-    //             <button type="button" class="trailer-close-btn"> Close</button>
-    //         `;
-    //         document.querySelector('.modal-inform-movie').insertAdjacentHTML('afterbegin', trailerMurkUp);
-    //   }
 
     return (
         <>
@@ -48,7 +39,7 @@ export const MovieTrailer = ({movieId}) => {
 
             { playerStatus === "on" && 
                 <ModalWindow onClose={onTrailerClose}>
-                    <MovieTrailerPlayer 
+                    {/* <MovieTrailerPlayer 
                         id="ytplayer" 
                         type="text/html" 
                         width="890" 
@@ -57,7 +48,69 @@ export const MovieTrailer = ({movieId}) => {
                         allowfullscreen 
                         allow="autoplay" 
                         src={youTubeRef}
-                    />
+                    /> */}
+                    <Media queries={{
+                        min: "(max-width: 299px)",
+                        small: "(min-width: 300px) and (max-width: 767px)",
+                        medium: "(min-width: 768px) and (max-width: 1023px)",
+                        large: "(min-width: 1024px)"
+                    }}>
+
+                        {matches => (
+                            <>
+                                {matches.min && 
+                                    <MovieTrailerPlayer 
+                                        id="ytplayer" 
+                                        type="text/html" 
+                                        width="175" 
+                                        height="100"
+                                        frameborder="0"
+                                        allowfullscreen 
+                                        allow="autoplay" 
+                                        src={youTubeRef}
+                                    />
+                                }
+                                {matches.small && 
+                                    <MovieTrailerPlayer 
+                                        id="ytplayer" 
+                                        type="text/html" 
+                                        width="300" 
+                                        height="200"
+                                        frameborder="0"
+                                        allowfullscreen 
+                                        allow="autoplay" 
+                                        src={youTubeRef}
+                                    />
+                                }
+
+                                {matches.medium && 
+                                    <MovieTrailerPlayer 
+                                        id="ytplayer" 
+                                        type="text/html" 
+                                        width="700" 
+                                        height="500"
+                                        frameborder="0"
+                                        allowfullscreen 
+                                        allow="autoplay" 
+                                        src={youTubeRef}
+                                    />
+                                }
+
+                                {matches.large && 
+                                    <MovieTrailerPlayer 
+                                        id="ytplayer" 
+                                        type="text/html" 
+                                        width="890" 
+                                        height="600"
+                                        frameborder="0"
+                                        allowfullscreen 
+                                        allow="autoplay" 
+                                        src={youTubeRef}
+                                    />
+                                }
+                            </>
+                        )}
+                    </Media>
                 </ModalWindow>
             }
         </>
